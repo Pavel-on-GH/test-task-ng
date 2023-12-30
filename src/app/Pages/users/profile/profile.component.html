@@ -1,0 +1,66 @@
+<div>
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h4>Профиль</h4>
+      </div>
+      <div class="card-body">
+        <div *ngIf="isLoading; else elseForm">
+          <app-loading :title="loadingTitle"></app-loading>
+        </div>
+        <ng-template #elseForm>
+          <form [formGroup]="userForm" (ngSubmit)="updateUser()">
+            <div class="mb-3">
+              <label>Имя пользователя</label>
+              <input type="text" formControlName="name" class="form-control" />
+              <div
+                *ngIf="
+                  userForm.get('name')?.hasError('required') &&
+                  userForm.get('name')?.touched
+                "
+                class="text-danger"
+              >
+                Введите имя пользователя
+              </div>
+            </div>
+            <div class="mb-3">
+              <label>Email</label>
+              <input type="text" formControlName="email" class="form-control" />
+              <div
+                *ngIf="
+                  userForm.get('email')?.hasError('required') &&
+                  userForm.get('email')?.touched
+                "
+                class="text-danger"
+              >
+                Введите email
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label>Пароль</label>
+              <input
+                type="text"
+                formControlName="password"
+                class="form-control"
+              />
+              <div
+                *ngIf="
+                  userForm.get('password')?.hasError('required') &&
+                  userForm.get('password')?.touched
+                "
+                class="text-danger"
+              >
+                Введите пароль
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+          </form>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

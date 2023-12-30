@@ -1,0 +1,40 @@
+{
+  "user": [
+    {
+      "name": "FirstUser",
+      "email": "FirstUser@gmail.com",
+      "password": "12345",
+      "id": 1
+    },
+    {
+      "name": "Test",
+      "email": "Test@gmail.com",
+      "password": "J3-748nV-1t",
+      "id": 2
+    },
+    {
+      "name": "LastUser",
+      "email": "LastUser@gmail.com",
+      "password": "sadfdsfa",
+      "id": 3
+    },
+    {
+      "name": "NotUser",
+      "email": "NotUser@gmail.com",
+      "password": "87-jfa34sh159",
+      "id": 5
+    },
+    {
+      "name": "Тест",
+      "email": "Tests@gmail.com",
+      "password": "rewhthu",
+      "id": 6
+    },
+    {
+      "name": "ReallyLustUser",
+      "email": "ReallyLustUser@gmail.com",
+      "password": "12345678",
+      "id": 7
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h4>
+        Пользователи:
+        <a routerLink="/signup" class="btn btn-primary float-end">Добавить</a>
+      </h4>
+    </div>
+    <div class="card-body">
+      <div *ngIf="isLoading; else elseTableBlock">
+        <app-loading :title="loadingTitle"></app-loading>
+      </div>
+      <ng-template #elseTableBlock>
+        <table class="table table-bordered border-primary">
+          <thead>
+            <tr>
+              <th scope="col">Имя пользователя</th>
+              <th scope="col">Email</th>
+              <th scope="col">Пароль</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of this.users">
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.password }}</td>
+              <td>
+                <a
+                  routerLink="/profile/{{ user.id }}"
+                  class="btn btn-success mx-2"
+                  >Обновить</a
+                >
+                | &nbsp;<button
+                  type="button"
+                  class="btn btn-danger"
+                  (click)="deleteUser(user.id)"
+                >
+                  Удалить
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-template>
+    </div>
+  </div>
+</div>
